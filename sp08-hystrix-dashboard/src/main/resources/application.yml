@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: hystricx-dashboard
+#hystrix仪表盘,进行数据监控
+#在hystrix项目中暴露监控端点hystrix.stream
+#在仪表盘中,填写监控路径,开始监控
+   
+server: 
+  port: 4001  
+    
+eureka:   
+  client:   
+    server-url:   
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka 
+    
+    
+    
