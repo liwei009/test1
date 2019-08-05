@@ -1,13 +1,21 @@
 spring:
   application:
     name: config-server
-  
+  profiles:
+    active: native 
+    
+#默认可以不配置     
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/liwei009/sp-config
-          searchPaths: config
+        native:
+          search-locations: classpath:/config
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/liwei009/sp-config
+#          searchPaths: config
           #username: your-username
           #password: your-password  
   rabbitmq:
@@ -15,7 +23,10 @@ spring:
     port: 5672
     username: admin
     password: admin   
-    
+
+  sleuth:
+    sampler:
+      probability: 0.1    
 server:
   port: 6001
     
